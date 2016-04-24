@@ -1,5 +1,7 @@
 $(document).ready(function () {
     new Mavigator('.check-active-links', {warnIfLinkWasntFound: true, classToParent: true});
+
+    FastClick.attach(document.body);
 });
 
 function deleteRequest (message, url, backUrl) {

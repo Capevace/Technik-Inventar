@@ -20,6 +20,35 @@ Route::group(['middleware' => ['auth']], function () {
      */
     Route::group(['prefix' => 'items'], function () {
         /**
+         * Permission: creating
+         */
+        Route::group(['middleware' => ['permission:create-items']], function () {
+            Route::get('/create', 'ItemController@create');
+            Route::post('/create', 'ItemController@store');
+        });
+
+        /**
+         * Permission: managing item types
+         */
+        Route::group(['middleware' => ['permission:manage-item-types']], function () {
+            Route::get('/types', 'ItemTypeController@index');
+        });
+
+        /**
+         * Permission: managing broken items
+         */
+        Route::group(['middleware' => ['permission:manage-broken-items']], function () {
+            Route::get('/broken', 'BrokenItemController@index');
+            Route::get('/{id}/broken', 'BrokenItemController@show');
+            Route::get('/{id}/broken/report', 'BrokenItemController@report');
+            Route::get('/{id}/broken/{broken_id}/edit', 'BrokenItemController@edit');
+
+            Route::post('/{id}/broken/report', 'BrokenItemController@open');
+            Route::post('/{id}/broken/{broken_id}/edit', 'BrokenItemController@change');
+            Route::post('/{id}/broken/{broken_id}/close', 'BrokenItemController@close');
+        });
+
+        /**
          * Permission: viewing
          */
         Route::group(['middleware' => ['permission:view-items']], function () {
@@ -35,27 +64,20 @@ Route::group(['middleware' => ['auth']], function () {
             Route::post('/{id}/edit', 'ItemController@change');
             Route::post('/{id}/delete', 'ItemController@delete');
         });
-
-        /**
-         * Permission: creating
-         */
-        Route::group(['middleware' => ['permission:create-items']], function () {
-            Route::get('/create', 'ItemController@create');
-            Route::post('/create', 'ItemController@store');
-        });
-
-        /**
-         * Permission: managing item types
-         */
-        Route::group(['middleware' => ['permission:manage-item-types']], function () {
-            Route::get('/types', 'ItemTypeController@index');
-        });
     });
 
     /**
      * Job routes
      */
     Route::group(['prefix' => 'jobs'], function () {
+        /**
+        * Permission: creating
+        */
+        Route::group(['middleware' => ['permission:create-jobs']], function () {
+            Route::get('/create', 'JobController@create');
+            Route::post('/create', 'JobController@store');
+        });
+
         /**
         * Permission: viewing
         */
@@ -73,17 +95,9 @@ Route::group(['middleware' => ['auth']], function () {
         });
 
         /**
-        * Permission: creating
-        */
-        Route::group(['middleware' => ['permission:create-jobs']], function () {
-            Route::get('/create', 'JobController@create');
-            Route::post('/create', 'JobController@store');
-        });
-
-        /**
         * Permission: managing job items
         */
-        Route::group(['middleware' => ['permission:manage-job-items']], function () {
+        Route::group(['middleware' => ['permission:assign-job-items']], function () {
             Route::post('/{id}/items', 'JobController@changeItems');
         });
     });

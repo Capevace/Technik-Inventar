@@ -10,6 +10,7 @@
             <ul class="nav nav-tabs check-active-links">
                 <li><a href="{{ url('items/' . $item->id) }}">Artikel anzeigen</a></li>
                 <li><a href="{{ url('items/' . $item->id . '/edit') }}">Artikel Bearbeiten</a></li>
+                <li><a href="{{ url('items/' . $item->id . '/broken') }}">Defekte Artikel</a></li>
             </ul>
         </div>
     </div>

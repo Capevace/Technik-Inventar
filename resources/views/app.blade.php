@@ -44,6 +44,10 @@
                                         <li><a href="{{ url('items/create') }}">Artikel hinzufügen</a></li>
                                     @endpermission
 
+                                    @permission('manage-broken-items')
+                                        <li><a href="{{ url('items/broken') }}">Defekte Artikel</a></li>
+                                    @endpermission
+
                                     @permission('manage-item-types')
                                         <li><a href="{{ url('items/types') }}">Artikel-Kategorien</a></li>
                                     @endpermission

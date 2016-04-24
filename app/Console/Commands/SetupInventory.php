@@ -87,6 +87,12 @@ class SetupInventory extends Command
         $manageArticleTypes->description = 'Artikel-Kategorien verwalten';
         $manageArticleTypes->save();
 
+        $manageBrokenItems = new Permission();
+        $manageBrokenItems->name = 'manage-broken-items';
+        $manageBrokenItems->display_name = 'Defekte Artikel verwalten';
+        $manageBrokenItems->description = 'Defekte Artikel verwalten';
+        $manageBrokenItems->save();
+
         // Job permissions
         $viewJobs = new Permission();
         $viewJobs->name = 'view-jobs';
@@ -131,6 +137,7 @@ class SetupInventory extends Command
             $editArticles,
             $createArticles,
             $manageArticleTypes,
+            $manageBrokenItems,
             $viewJobs,
             $editJobs,
             $createJobs,
@@ -149,6 +156,7 @@ class SetupInventory extends Command
             $editArticles,
             $createArticles,
             $manageArticleTypes,
+            $manageBrokenItems,
             $viewJobs,
             $editJobs,
             $createJobs,
@@ -159,11 +167,12 @@ class SetupInventory extends Command
         $apprentice = new Role();
         $apprentice->name = 'apprentice';
         $apprentice->display_name = 'Schüler';
-        $apprentice->description = 'Kann das Inventar ansehen, und Aufträge verwalten.';
+        $apprentice->description = 'Kann das Inventar ansehen, defekte Artikel verwalten und Aufträge verwalten.';
         $apprentice->save();
 
         $apprentice->attachPermissions([
             $viewArticles,
+            $manageBrokenItems,
             $viewJobs,
             $editJobs,
             $createJobs,

@@ -27,9 +27,14 @@ class Item extends Model
         return $this->hasMany('App\UsedItem', 'item_id', 'id');
     }
 
+    public function broken()
+    {
+        return $this->hasMany('App\BrokenItem', 'item_id', 'id');
+    }
+
     public function freeCount($time_start = -1, $time_end = -1)
     {
-        return $this->total_count - $this->usedCount($time_start, $time_end);
+        return $this->total_count - $this->usedCount($time_start, $time_end) - $this->brokenCount();
     }
 
     public function usedCount($time_start = -1, $time_end = -1)
@@ -57,6 +62,12 @@ class Item extends Model
 
     public function brokenCount()
     {
-        return 0; // temp, add broken some time later
+        $count = 0;
+
+        foreach ($this->broken as $item) {
+            $count += $item->count;
+        }
+
+        return $count;
     }
 }

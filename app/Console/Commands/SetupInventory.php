@@ -18,7 +18,7 @@ class SetupInventory extends Command
      *
      * @var string
      */
-    protected $signature = 'inventory:setup';
+    protected $signature = 'inventory:setup {user_pw : The password of the user}';
 
     /**
      * The console command description.
@@ -44,12 +44,13 @@ class SetupInventory extends Command
      */
     public function handle()
     {
+
         $user = User::find(1);
         if (is_null($user)) {
             $user = new User;
             $user->name = 'Leiter';
             $user->email = 'joh.technik@gmail.com';
-            $user->password = bcrypt('TechYourLife%88');
+            $user->password = bcrypt($this->argument('user_pw'));
             $user->save();
         }
 

@@ -8,6 +8,6 @@ class ItemType extends Model
 {
     public function items()
     {
-        return $this->hasMany('App\Item');
+        return $this->hasMany('App\Item', 'type_id', 'id');
     }
 }

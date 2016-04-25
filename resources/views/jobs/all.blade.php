@@ -54,8 +54,8 @@
                             {{ date('d. F Y', strtotime($job->time_end)) }}
                         </td>
                         <td class="pull-right">
-                            <a href="{{ url('jobs/' . $job->id) }}" class="btn btn-xs btn-link">Anzeigen</a>
-                            <a href="{{ url('jobs/' . $job->id . '/edit') }}" class="btn btn-xs btn-link">Bearbeiten</a>
+                            <a href="{{ url('jobs/' . $job->id) }}" class="btn btn-xs btn-primary">Anzeigen</a>
+                            <a href="{{ url('jobs/' . $job->id . '/edit') }}" class="btn btn-xs btn-warning">Bearbeiten</a>
                         </td>
                     </tr>
                 @endforeach

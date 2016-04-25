@@ -11,17 +11,19 @@ var elixir = require('laravel-elixir');
 |
 */
 
-elixir(function(mix) {
-	mix.styles([
-		'bootstrap.css',
-		'main.css'
-	])
-	.scripts([
-		'jquery.js',
-		'bootstrap.js',
-		'activelink.js',
-		'vue.js',
-		'main.js'
-	])
-	.version(["css/all.css", "js/all.js"]);
-});
+ elixir(function(mix) {
+     mix.styles([
+         'bootstrap.css',
+         'main.css'
+     ])
+     .scripts([
+         'jquery.js',
+         'bootstrap.js',
+         'activelink.js',
+         'vue.js',
+         'fastclick.js',
+         'main.js'
+     ])
+     .version(["css/all.css", "js/all.js"]);
+     mix.copy('resources/assets/fonts/roboto.woff2', 'public/fonts/roboto.woff2');
+ });

@@ -23,7 +23,7 @@ class CreateItemsTable extends Migration
         });
 
         Schema::table('items', function (Blueprint $table) {
-            $table->foreign('type_id')->references('id')->on('item_types')->onDelete('set null');
+            $table->foreign('type_id')->references('id')->on('item_types')->onDelete('cascade');
         });
     }
 

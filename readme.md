@@ -6,19 +6,6 @@ Das Inventursystem basiert auf dem PHP Framework Laravel 5.
 
 Setup database in the `.env`
 
-For debug:
-```
-APP_DEBUG=true
-APP_URL=http://localhost
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=<DB_NAME>
-DB_USERNAME=<DB_USERNAME>
-DB_PASSWORD=<DB_PASSWORD>
-```
-
 For production:
 ```
 APP_DEBUG=false
@@ -32,8 +19,14 @@ DB_USERNAME=<DB_USERNAME>
 DB_PASSWORD=<DB_PASSWORD>
 ```
 
+For debug:
+```
+APP_DEBUG=true
+```
+
 Install all dependencies (composer and npm)
 ```sh
+> git clone https://github.com/Capevace/Technik-Inventar.git
 > composer install
 > npm install
 ```

@@ -32,6 +32,10 @@ Route::group(['middleware' => ['auth']], function () {
          */
         Route::group(['middleware' => ['permission:manage-item-types']], function () {
             Route::get('/types', 'ItemTypeController@index');
+
+            Route::post('/types/create', 'ItemTypeController@store');
+            Route::post('/types/{id}', 'ItemTypeController@change');
+            Route::post('/types/{id}/delete', 'ItemTypeController@delete');
         });
 
         /**

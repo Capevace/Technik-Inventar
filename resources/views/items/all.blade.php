@@ -5,7 +5,12 @@
 @endsection
 
 @section('content')
-    <h3>Alle Artikel</h3>
+    <h3>
+        Alle Artikel
+        <a href="{{ url('items/create') }}" class="btn btn-primary btn-sm pull-right">
+            Hinzufügen
+        </a>
+    </h3>
 
     @if(count($items) > 0)
         <div class="table-responsive">

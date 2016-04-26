@@ -37,6 +37,3 @@ Use the Laravel Artisan CLI to migrate the database, generate an encryption key 
 > php artisan key:generate
 > php artisan inventory:setup {Leiter Account Passwort}
 ```
-## Copyright
-
-© 2015 Lukas von Mateffy

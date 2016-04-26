@@ -8,15 +8,8 @@ use App\Http\Requests;
 
 class PagesController extends Controller
 {
-    public function about()
+    public function index()
     {
-        $name = 'Lukas';
-
-        return view('pages.about', compact('name'));
-    }
-
-    public function contact()
-    {
-        return view('pages.contact');
+        return view('index');
     }
 }

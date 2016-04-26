@@ -49,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         Technik Inventory
                     </a>
                 </div>
@@ -117,6 +117,7 @@
                             @endpermission
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+							<li><a>Hallo {{ Auth::user()->name }}</a></li>
                             <li><a href="{{ url('logout') }}">Ausloggen</a></li>
                         </ul>
                     </div>

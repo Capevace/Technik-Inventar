@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/items';
+    protected $redirectTo = '/';
 
     /**
      * The username property.

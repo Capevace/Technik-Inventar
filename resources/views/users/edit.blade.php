@@ -33,7 +33,7 @@
                                 <label for="role">Rolle:</label>
                                 <select class="form-control" name="role">
                                     @foreach($roles as $role)
-                                        <option value="{{ $role->id }}" @role($role->name) selected="" @endrole>{{ $role->display_name }}</option>
+                                        <option value="{{ $role->id }}" @if($user->roles->first()->id == $role->id) selected="" @endrole>{{ $role->display_name }}</option>
                                     @endforeach
                                 </select>
                             </div>

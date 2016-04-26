@@ -5,7 +5,12 @@
 @endsection
 
 @section('content')
-    <h3>Alle Nutzer</h3>
+    <h3>
+		Alle Nutzer
+		<a href="{{ url('users/create') }}" class="btn btn-primary btn-sm pull-right">
+            Hinzufügen
+        </a>
+	</h3>
 
     @if(count($users) > 0)
         <div class="table-responsive">
@@ -46,7 +51,10 @@
                         <td class="pull-right">
                             <a href="{{ url('users/' . $user->id) }}" class="btn btn-xs btn-primary">Bearbeiten</a>&nbsp;
                             <a href="#" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#item-modal" data-id="{{ $user->id }}">Passwort ändern</a>&nbsp;
-                            <a href="#" class="btn btn-xs btn-danger">Löschen</a>
+							<form class="" action="{{ url('users/' . $user->id . '/delete') }}" method="post" style="display: inline;">
+								{{ csrf_field() }}
+								<button type="submit" class="btn btn-xs btn-danger">Löschen</button>
+							</form>
                         </td>
                     </tr>
                 @endforeach

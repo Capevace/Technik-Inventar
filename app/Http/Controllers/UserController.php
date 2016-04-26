@@ -98,4 +98,13 @@ class UserController extends Controller
 
         return response()->alertBack('Das Passwort wurde geändert.', 'success');
     }
+
+	public function delete($id)
+	{
+		if ($id == 1)
+			return response()->alertBack('Der Leiter-Account kann nicht gelöscht werden.', 'warning');
+		User::findOrFail($id)->delete();
+
+		return response()->alertBack('Nutzer wurde gelöscht.', 'success');
+	}
 }

@@ -5,7 +5,12 @@
 @endsection
 
 @section('content')
-    <h3>Alle Aufträge</h3>
+    <h3>
+		Alle Aufträge
+		<a href="{{ url('jobs/create') }}" class="btn btn-primary btn-sm pull-right">
+            Hinzufügen
+        </a>
+	</h3>
 
     @if(count($jobs) > 0)
         <div class="table-responsive">
@@ -56,6 +61,10 @@
                         <td class="pull-right">
                             <a href="{{ url('jobs/' . $job->id) }}" class="btn btn-xs btn-primary">Anzeigen</a>
                             <a href="{{ url('jobs/' . $job->id . '/edit') }}" class="btn btn-xs btn-warning">Bearbeiten</a>
+							<form class="" action="{{ url('jobs/' . $job->id . '/delete') }}" method="post" style="display: inline;">
+								{{ csrf_field() }}
+								<button type="submit" class="btn btn-xs btn-danger">Löschen</button>
+							</form>
                         </td>
                     </tr>
                 @endforeach

@@ -104,8 +104,15 @@ class JobController extends Controller
             $used->save();
         }
 
-        return response()->alertBack('Artikel wurde bearbeitet!', 'success');
+        return response()->alertBack('Artikel wurden bearbeitet!', 'success');
     }
+
+	public function delete($id)
+	{
+		Job::findOrFail($id)->delete();
+
+		return response()->alertBack('Auftrag wurde gelöscht.', 'success');
+	}
 
     public function validateOrBack($request)
     {

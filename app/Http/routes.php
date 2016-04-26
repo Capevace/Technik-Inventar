@@ -13,7 +13,7 @@
 
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', 'ItemController@index');
+    Route::get('/', 'PagesController@index');
 
     /**
      * Item routes
@@ -96,6 +96,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::group(['middleware' => ['permission:edit-jobs']], function () {
             Route::get('/{id}/edit', 'JobController@edit');
             Route::post('/{id}/edit', 'JobController@change');
+			Route::post('/{id}/delete', 'JobController@delete');
         });
 
         /**

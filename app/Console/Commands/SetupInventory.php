@@ -160,8 +160,7 @@ class SetupInventory extends Command
             $viewJobs,
             $editJobs,
             $createJobs,
-            $assignJobItems,
-            $manageUsers
+            $assignJobItems
         ]);
 
         $apprentice = new Role();
@@ -178,6 +177,12 @@ class SetupInventory extends Command
             $createJobs,
             $assignJobItems
         ]);
+
+		$viewer = new Role();
+        $viewer->name = 'viewer';
+        $viewer->display_name = 'Benutzer';
+        $viewer->description = 'Kann sich anmelden.';
+        $viewer->save();
 
         $user->attachRole($admin);
 

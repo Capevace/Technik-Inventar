@@ -1,7 +1,5 @@
 # Technik Inventar: Bedienungsanleitung
 
-Die Software dient zur Katalogisierung der Gegenstände der Technik.
-
 ## Artikel
 Artikel repräsentieren Gegenstände die die Technik besitzt. Innerhalb des *Artikel* Tabs können diese erstellt, bearbeitet und gelöscht werden. Außerdem wird jeder Artikel wird einer *Kategorie* zugeordnet
 

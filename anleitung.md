@@ -1,6 +1,6 @@
 # Technik Inventar: Bedienungsanleitung
 
-Die Software dient zur Katalogisierung der Gegenstände 
+Die Software dient zur Katalogisierung der Gegenstände der Technik.
 
 ## Artikel
 Artikel repräsentieren Gegenstände die die Technik besitzt. Innerhalb des *Artikel* Tabs können diese erstellt, bearbeitet und gelöscht werden. Außerdem wird jeder Artikel wird einer *Kategorie* zugeordnet
@@ -20,5 +20,18 @@ Der *Nutzer*-Bereich ist nur von einem Leiter einsehbar. Dieser kann dort neue N
 - Techniker: *Kann das Inventar und die Aufträge verwalten.*
 - Schüler: *Kann das Inventar ansehen, defekte Artikel verwalten und Aufträge verwalten.*
 
+
+
+
 ## Verwendung des Systems
 Nach der ersten einweisung in das System **müssen** alle Aufträge mit in das Inventar eingetragen werden. Daher erhält jeder Techniker einen Zugang, mit dem er diese hinzufügen kann. Dass alleinige Ausfüllen des Dokuments reicht nicht mehr aus.
+
+### Zugang
+Das System selber ist auf http://technik.johanneum-luebeck.de erreichbar.
+Jeder Techniker kann sich dort mit seinen Zugangsdaten anmelden.
+
+## Fehler oder Probleme
+Falls Fehler auftreten sollten, bitte Lukas von Mateffy kontaktieren.
+
+## Copyright
+© 2016 Lukas von Mateffy

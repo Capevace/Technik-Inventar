@@ -46,7 +46,7 @@
                             {{ $user->email }}
                         </td>
                         <td>
-                            Rolle
+                            {{ $user->roles->first()->display_name }}
                         </td>
                         <td class="pull-right">
                             <a href="{{ url('users/' . $user->id) }}" class="btn btn-xs btn-primary">Bearbeiten</a>&nbsp;

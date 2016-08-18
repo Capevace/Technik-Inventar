@@ -85,6 +85,9 @@
                         <p class="lead" v-if="used.length == 0">Keine Artikel in diesem Auftrag</p>
                         <table class="table" v-if="used.length > 0">
                             <thead>
+								<th>
+									ID
+								</th>
                                 <th>
                                     Name
                                 </th>
@@ -101,6 +104,9 @@
                             <tbody>
                                 <template v-for="item in used">
                                     <tr>
+										<td>
+											@{{ item.$item.id }}
+										</td>
                                         <td>
                                             @{{ item.$item.name }}
                                         </td>

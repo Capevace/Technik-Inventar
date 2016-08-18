@@ -14,30 +14,30 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
         }
         </style>
-        <link rel="stylesheet" href="{{ url(elixir('css/all.css')) }}" charset="utf-8">
-        <script src="{{ url(elixir('js/all.js')) }}"></script>
+        <link rel="stylesheet" href=".{{ elixir('css/all.css') }}" charset="utf-8">
+        <script src=".{{ elixir('js/all.js') }}"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="assets/img/favicons/android-chrome-192x192.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
-		<link rel="manifest" href="assets/img/favicons/manifest.json">
-		<link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-		<link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
-		<meta name="msapplication-TileColor" content="#2b5797">
-		<meta name="msapplication-TileImage" content="assets/img/favicons/mstile-144x144.png">
-		<meta name="msapplication-config" content="assets/img/favicons/browserconfig.xml">
-		<meta name="theme-color" content="#ff4f4f">
+    		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">
+    		<link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-touch-icon-60x60.png">
+    		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-touch-icon-72x72.png">
+    		<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-touch-icon-76x76.png">
+    		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-touch-icon-114x114.png">
+    		<link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-touch-icon-120x120.png">
+    		<link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-touch-icon-144x144.png">
+    		<link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-touch-icon-152x152.png">
+    		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon-180x180.png">
+    		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+    		<link rel="icon" type="image/png" href="assets/img/favicons/android-chrome-192x192.png" sizes="192x192">
+    		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-96x96.png" sizes="96x96">
+    		<link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
+    		<link rel="manifest" href="assets/img/favicons/manifest.json">
+    		<link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    		<link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
+    		<meta name="msapplication-TileColor" content="#2b5797">
+    		<meta name="msapplication-TileImage" content="assets/img/favicons/mstile-144x144.png">
+    		<meta name="msapplication-config" content="assets/img/favicons/browserconfig.xml">
+    		<meta name="theme-color" content="#ff4f4f">
     </head>
     <body>
         <nav class="navbar navbar-default">
@@ -114,6 +114,12 @@
                                     <li><a href="{{ url('users/create') }}">Nutzer hinzufügen</a></li>
                                 </ul>
                             </li>
+                            @endpermission
+
+
+							@permission('manage-funds')
+                            <!-- USER DROPDOWN -->
+                            <li><a href="{{ url('funds') }}">Gelder</a></li>
                             @endpermission
                         </ul>
                         <ul class="nav navbar-nav navbar-right">

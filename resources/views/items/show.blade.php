@@ -26,7 +26,7 @@
             </h3>
             <div class="row">
                 <div class="col-md-3">
-                    <img src="http://placehold.it/200?text=Artikel" alt="Artikelbild" class="img-thumbnail">
+                    <img src="@if (!empty($item->img)) {{ $item->img }} @else http://placehold.it/200?text=Artikel @endif" alt="Artikelbild" class="img-thumbnail">
                     <br><br>
                 </div>
                 <div class="col-sm-4">

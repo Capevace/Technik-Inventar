@@ -15,6 +15,10 @@
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'PagesController@index');
 
+    Route::group(['middleware' => ['role:admin']], function () {
+            Route::get('/leiter', 'PagesController@data');
+    });
+
     /**
      * Item routes
      */
@@ -119,6 +123,14 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/{id}/edit', 'UserController@change');
         Route::post('/{id}/password', 'UserController@changePassword');
         Route::post('/{id}/delete', 'UserController@delete');
+    });
+
+	Route::group(['prefix' => 'funds', 'middleware' => ['permission:manage-funds']], function () {
+        Route::get('/', 'FundController@index');
+
+		Route::post('/', 'FundController@create');
+		Route::put('/{fund}', 'FundController@update');
+		Route::delete('/{fund}', 'FundController@delete');
     });
 });
 

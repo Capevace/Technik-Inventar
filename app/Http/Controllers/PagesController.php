@@ -12,4 +12,12 @@ class PagesController extends Controller
     {
         return view('index');
     }
+
+    public function data(Request $request)
+    {
+        $dataVerified = false;
+
+        $pw = $request->input('password');
+        return view('leiter', compact('pw'));
+    }
 }

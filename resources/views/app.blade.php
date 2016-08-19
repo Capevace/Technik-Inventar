@@ -14,8 +14,8 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
         }
         </style>
-        <link rel="stylesheet" href=".{{ elixir('css/all.css') }}" charset="utf-8">
-        <script src=".{{ elixir('js/all.js') }}"></script>
+        <link rel="stylesheet" href="{{ url(elixir('css/all.css')) }}" charset="utf-8">
+        <script src="{{ url(elixir('js/all.js')) }}"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">

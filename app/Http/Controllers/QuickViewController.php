@@ -15,6 +15,11 @@ class QuickViewController extends Controller
 
     public function items()
     {
-        
+        return 'not implemented';
+    }
+
+    public function jobs()
+    {
+        return 'not implemented';
     }
 }

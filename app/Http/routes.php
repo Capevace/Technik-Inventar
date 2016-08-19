@@ -21,6 +21,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::group(['prefix' => 'quick', 'middleware' => ['permission:view-items', 'permission:view-jobs']], function () {
         Route::get('/', 'QuickViewController@index');
+        Route::post('/items', 'QuickViewController@items');
+        Route::post('/jobs', 'QuickViewController@jobs');
     });
 
     /**

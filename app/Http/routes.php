@@ -19,6 +19,10 @@ Route::group(['middleware' => ['auth']], function () {
             Route::get('/leiter', 'PagesController@data');
     });
 
+    Route::group(['prefix' => 'quick', 'middleware' => ['permission:view-items', 'permission:view-jobs']], function () {
+        Route::get('/', 'QuickViewController@index');
+    });
+
     /**
      * Item routes
      */

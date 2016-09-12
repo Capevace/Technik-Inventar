@@ -19,10 +19,12 @@ Route::group(['middleware' => ['auth']], function () {
             Route::get('/leiter', 'PagesController@data');
     });
 
-    Route::group(['prefix' => 'quick', 'middleware' => ['permission:view-items', 'permission:view-jobs']], function () {
-        Route::get('/', 'QuickViewController@index');
-        Route::post('/items', 'QuickViewController@items');
-        Route::post('/jobs', 'QuickViewController@jobs');
+    Route::group(['middleware' => ['permission:view-items', 'permission:view-jobs']], function () {
+        Route::get('/quick', 'QuickViewController@index');
+        Route::post('/quick/items', 'QuickViewController@items');
+        Route::post('/quick/jobs', 'QuickViewController@jobs');
+
+        Route::get('/search/{query}', 'SearchController@search');
     });
 
     /**

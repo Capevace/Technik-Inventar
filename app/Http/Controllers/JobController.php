@@ -109,7 +109,10 @@ class JobController extends Controller
 
 	public function delete($id)
 	{
-		Job::findOrFail($id)->delete();
+		$job = Job::findOrFail($id);
+
+		$job->items()->delete();
+		$job->delete();
 
 		return response()->alertBack('Auftrag wurde gelöscht.', 'success');
 	}
